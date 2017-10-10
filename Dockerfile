@@ -10,8 +10,11 @@ RUN apt-get install -u net-tools \
 
 USER server
 
-ARG STEAM_USERNAME=anonymous
-ARG STEAM_PASSWORD
+# You need a valid login to dowload arma 3 server image.
+# This account has been created only for this,
+# thanks to community to not destroy or change the password.
+ARG STEAM_USERNAME=oneShootAccount
+ARG STEAM_PASSWORD=YR3COGKYKkeLoteMCuKl
 
 RUN /opt/steam/steamcmd.sh +login $STEAM_USERNAME $STEAM_PASSWORD +force_install_dir /opt/arma3 +app_update 233780 validate +logout +quit
 
@@ -20,9 +23,9 @@ RUN mkdir -p ~/".local/share/Arma 3" && mkdir -p ~/".local/share/Arma 3 - Other 
 # Clear credential cache, as steam logout does not do the job...
 RUN rm -rf ~/Steam
 
-EXPOSE 2302/udp 
-EXPOSE 2303/udp 
-EXPOSE 2304/udp 
+EXPOSE 2302/udp
+EXPOSE 2303/udp
+EXPOSE 2304/udp
 EXPOSE 2305/udp
 
 WORKDIR /opt/arma3/
