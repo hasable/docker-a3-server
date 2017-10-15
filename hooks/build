@@ -1,0 +1,4 @@
+#!/bin/sh
+
+docker build --build-arg STEAM_USERNAME=${SUSER} --build-arg STEAM_PASSWORD=${SPASS} -t ${IMAGE_NAME}:${IMAGE_VERSION} .
+
