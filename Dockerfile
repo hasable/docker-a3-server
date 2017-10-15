@@ -10,11 +10,9 @@ RUN apt-get install -u net-tools \
 
 USER server
 
-# You need a valid login to dowload arma 3 server image.
-# This account has been created only for this,
-# thanks to community to not destroy or change the password.
-ARG STEAM_USERNAME=oneShootAccount
-ARG STEAM_PASSWORD=YR3COGKYKkeLoteMCuKl
+# You need a valid login to dowload arma 3 server image...
+ARG STEAM_USERNAME=anonymous
+ARG STEAM_PASSWORD=
 
 RUN /opt/steam/steamcmd.sh +login $STEAM_USERNAME $STEAM_PASSWORD +force_install_dir /opt/arma3 +app_update 233780 validate +logout +quit
 
