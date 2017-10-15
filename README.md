@@ -13,6 +13,14 @@ docker build \
 	 -t <image name> .
 ```
 
+|Argument|Description|Default value|
+|---|---|---|
+|STEAM_USERNAME|User to use to connect to Steam|anonymous|
+|STEAM_PASSWORD|Password related to user account| |
+
+Please note that you won't be able to download Arma 3 Server files using anonymouns connection.
+Do not use your regular account login : create a dedicated one for your server.
+
 ## How to use this image? 
 
 ```bash
@@ -23,14 +31,6 @@ docker run -it -d \
 	-p 2305:2305/udp \
 	-t hasable/arma3
 ```
-
-|Argument|Description|Default value|
-|---|---|---|
-|STEAM_USERNAME|User to use to connect to Steam|anonymous|
-|STEAM_PASSWORD|Password related to user account| |
-
-Please note that you won't be able to download Arma 3 Server files using anonymouns connection.
-Do not use your regular account login : create a dedicated one for your server.
 
 ## Custom configuration
 
