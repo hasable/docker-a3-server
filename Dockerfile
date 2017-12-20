@@ -31,6 +31,7 @@ EXPOSE 2303/udp
 EXPOSE 2304/udp 
 EXPOSE 2305/udp 
 EXPOSE 2306/udp
+EXPOSE 2309/udp
 
 ENTRYPOINT ["/opt/arma3/arma3server" ]
 CMD ["-config=/opt/arma3/conf/server.cfg", \
